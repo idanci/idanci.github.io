@@ -209,19 +209,19 @@ h3 {
   color: var(--ink);
 }
 
-.role-meta {
+.card-meta {
   font-size: 1rem;
   color: var(--ink-muted);
   margin: 0 0 0.5rem;
   font-style: italic;
 }
 
-ul.duties {
+ul.card-list {
   margin: 0.35rem 0 0;
   padding-left: 1.15rem;
 }
 
-ul.duties li {
+ul.card-list li {
   margin-bottom: 0.35rem;
 }
 
@@ -326,41 +326,45 @@ p.lead {
   padding-top: 1.2rem;
 }
 
+.resume-tabs > section.resume-tab-panel {
+  padding-top: 0.85rem;
+}
+
 #resume-tab-work:checked ~ #resume-panel-work,
 #resume-tab-tech:checked ~ #resume-panel-tech {
   display: block;
 }
 
-.company-link {
+.card-link {
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid transparent;
 }
 
-.company-link:hover {
+.card-link:hover {
   color: var(--accent);
   border-bottom-color: var(--accent-soft);
 }
 
-/* Work entries: company logo + title */
-article.job {
+/* Résumé cards (Work + Technologies — same structure, different tab) */
+article.card {
   margin-top: 0.25rem;
 }
 
-article.job + article.job {
+article.card + article.card {
   margin-top: 1.75rem;
   padding-top: 1.5rem;
   border-top: 1px dashed var(--line);
 }
 
-.job-intro {
+.card-head {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
   margin-bottom: 0.5rem;
 }
 
-.company-logo {
+.card-logo {
   width: 3.25rem;
   height: 3.25rem;
   object-fit: contain;
@@ -371,65 +375,59 @@ article.job + article.job {
   padding: 5px;
 }
 
-.job-intro-text {
+.card-text {
   min-width: 0;
 }
 
-.job-intro-text h3 {
+.card-text h3 {
   margin: 0 0 0.2rem;
 }
 
-.job-intro-text .role-meta {
+.card-text .card-meta {
   margin: 0;
 }
 
-/* Technology category cards (logos from previous site) */
-.tech-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.35rem;
-  margin-top: 0.75rem;
+.resume-tab-panel > h2 {
+  margin-bottom: 0.45rem;
 }
 
-.tech-card {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  background: rgba(255, 252, 248, 0.45);
+.resume-tab-panel article.card {
+  margin-top: 0;
 }
 
-.tech-logo {
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
-  flex-shrink: 0;
+.resume-tab-panel article.card + article.card {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
 }
 
-.tech-card-text {
-  min-width: 0;
-}
-
-.tech-card-text h3 {
-  margin: 0 0 0.15rem;
-  font-size: 1.22rem;
-}
-
-.tech-subtitle {
-  margin: 0 0 0.45rem;
-  font-size: 0.98rem;
-  color: var(--ink-muted);
-  font-style: italic;
-}
-
-ul.tech-details {
-  margin: 0;
-  padding-left: 1.15rem;
-  font-size: 1.02rem;
-}
-
-ul.tech-details li {
+.resume-tab-panel .card-head {
+  gap: 0.65rem;
   margin-bottom: 0.3rem;
+}
+
+.resume-tab-panel .card-logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 3px;
+}
+
+.resume-tab-panel .card-text h3 {
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+
+.resume-tab-panel .card-text .card-meta {
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.resume-tab-panel ul.card-list {
+  margin-top: 0.2rem;
+  padding-left: 1rem;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+
+.resume-tab-panel ul.card-list li {
+  margin-bottom: 0.2rem;
 }
